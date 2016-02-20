@@ -1,29 +1,27 @@
-function showScoreboardScreen() {
-	// TODO
-}
-function hideScoreboardScreen() {
-	// TODO
-}
+require.config({
+    urlArgs: '_=' + (new Date()).getTime(),
+    baseUrl: 'js',
+    paths: {
+        underscore: 'lib/underscore',
+        jquery: 'lib/jquery',
+        backbone: 'lib/backbone'
+    },
+    shim: {
+        'backbone': {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
+        },
+        'underscore': {
+            exports: '_'
+        }
+    }
+});
 
-function showGameScreen() {
-	// TODO
-}
-function hideGameScreen() {
-	// TODO
-}
+define(
+    ['backbone', 'router'],
+    function (Backbone, router) {
+        Backbone.history.start();
+    }
+);
 
-function showLoginScreen() {
-	// TODO
-}
-function hideLoginScreen() {
-	// TODO
-}
-
-function showMainScreen() {
-	// TODO
-}
-
-function hideMainScreen() {
-	// TODO
-}
 
